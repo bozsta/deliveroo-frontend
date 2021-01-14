@@ -19,8 +19,10 @@ function App() {
   
   return (
     <div className="App">
-      <header className="container">
-        <div className="logo" ><img src={logo} alt="logo" /></div>
+      <header>
+        <div className="container">
+          <div className="logo" ><img src={logo} alt="logo" /></div>
+        </div>
       </header>
       {!isLoading && <RestoInfo data={restoInfo.restaurant}/>}
       <div className="categories">
