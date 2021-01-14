@@ -19,13 +19,12 @@ function App() {
   
   return (
     <div className="App">
-      <header>
+      <header className="container">
         <div className="logo" ><img src={logo} alt="logo" /></div>
       </header>
       {!isLoading && <RestoInfo data={restoInfo.restaurant}/>}
       <div className="categories">
         {!isLoading &&  restoInfo.categories.map( (categorie) => {
-          console.log('categorie', categorie)
           return <Categorie key={categorie.name} name={categorie.name} meals={categorie.meals} />
         })}
       </div>
