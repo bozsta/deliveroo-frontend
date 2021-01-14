@@ -4,6 +4,8 @@ import RestoInfo from './components/RestoInfo'
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 import logo from './assets/images/logo.png'
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import Loader from "react-loader-spinner";
 
 function App() {
   const [restoInfo, setRestoInfo] = useState('')
@@ -16,7 +18,7 @@ function App() {
   useEffect(() => {
     fetchData()
   }, [])
-  
+
   return (
     <div className="App">
       <header>
@@ -24,13 +26,20 @@ function App() {
           <div className="logo" ><img src={logo} alt="logo" /></div>
         </div>
       </header>
-      {!isLoading && <RestoInfo data={restoInfo.restaurant}/>}
+      {!isLoading && <RestoInfo data={restoInfo.restaurant} />}
       <div className="categories">
-        {!isLoading &&  restoInfo.categories.map( (categorie) => {
+        {!isLoading && restoInfo.categories.map((categorie) => {
           return <Categorie key={categorie.name} name={categorie.name} meals={categorie.meals} />
         })}
       </div>
-    
+      {isLoading && <div className='overlay-loader'>
+        <Loader
+          type="Circles"
+          color="#FFFFFF"
+          height={100}
+          width={100}
+        />
+      </div>}
     </div>
   );
 }
