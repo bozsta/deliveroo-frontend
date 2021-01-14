@@ -23,10 +23,13 @@ function App() {
         <div className="logo" ><img src={logo} alt="logo" /></div>
       </header>
       {!isLoading && <RestoInfo data={restoInfo.restaurant}/>}
-      {!isLoading &&  restoInfo.categories.map( (categorie) => {
-        console.log('categorie', categorie)
-        return <Categorie key={categorie.name} name={categorie.name} meals={categorie.meals} />
-      })}
+      <div className="categories">
+        {!isLoading &&  restoInfo.categories.map( (categorie) => {
+          console.log('categorie', categorie)
+          return <Categorie key={categorie.name} name={categorie.name} meals={categorie.meals} />
+        })}
+      </div>
+    
     </div>
   );
 }

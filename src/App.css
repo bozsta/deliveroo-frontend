@@ -34,8 +34,34 @@ p {
   overflow: hidden;
   background: #f3f5f5;
 }
+.categories {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  margin-right: 30px;
+  margin-bottom: -25px;
+}
 .categorie {
   background-color: #f2f5f5;
+}
+.categorie {
+  display: flex;
+  flex-direction: column;
+  /* align-items: stretch; */
+  flex-wrap: wrap;
+  /*  margin: 0 -10px; */
+}
+.meals {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+.meal {
+  width: 50%;
+  min-width: 300px;
+  padding: 0 10px 25px;
 }
 .meal {
   border-radius: 5px;
@@ -48,6 +74,7 @@ p {
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
+  margin: 5px;
 }
 .meal picture {
   height: 130px;
@@ -56,7 +83,7 @@ p {
   overflow: hidden;
   position: relative;
 }
-.meal picture > img {
+.meal .picture > img {
   height: 100%;
   width: 100%;
   object-fit: cover;
