@@ -9,7 +9,7 @@ const Panier = ({data, handleAdd, handleRemove}) => {
         const calculTotal = () => {
             let total = 0
             for (let i = 0; i <  data.length; i++) {
-                total += (Number(data[i].price) * Number(data[i].quantity))
+                total += (Number(data[i].price) * Number(data[i].quantity)) // toFixed(2)
             }
             setSubtotal(total)
         }
@@ -28,14 +28,14 @@ const Panier = ({data, handleAdd, handleRemove}) => {
                     return (
                         <div className="detail" key={item.id}>
                             <Count value={item.quantity} id={item.id} setAdd={handleAdd} setRemove={handleRemove}/>
-                            {item.title} {item.price} 
+                            {item.title} {item.price} €
                         </div>
                     )
                 }
                 )}
             </div>
             {data.length > 0 && <div className="sub-cost">
-                    Sous-total: {subtotal} €
+                    Sous-total: {subtotal}  €
             </div>}
             
             {data.length > 0 && <div className="ship-cost">

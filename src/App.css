@@ -171,6 +171,12 @@ h3 {
   background: #bac3c3;
   color: #8b9a9b;
 }
+.panier .article {
+  max-height: 200px;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: auto;
+}
 .panier .articles .detail {
   display: flex;
   padding: 10px 0px;
