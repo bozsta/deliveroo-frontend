@@ -20,29 +20,31 @@ const Panier = ({data, handleAdd, handleRemove}) => {
  
     return (
         <div className="panier">
-           <button>Valider</button>
-           <div className="articles">
-           {!data.length > 0 && <div>Panier vide</div>}
-               {data.map(item => {
-                   return (
-                    <div key={item.id}>
-                        <Count value={item.quantity} id={item.id} setAdd={handleAdd} setRemove={handleRemove}/>
-                         {item.title} {item.price} 
-                    </div>
-                   )
-               }
-               )}
-           </div>
-           {data.length > 0 && <div className="sub-cost">
-                Sous-total: {subtotal}
-           </div>}
-           
-           {data.length > 0 && <div className="ship-cost">
-                Frais de livraison: {shipCost} €
-           </div>}
-           {data.length < 0 && <div className="total-cost">
-                Total: {subtotal + shipCost}
-           </div>}
+            <div className="card" >
+                <button disabled={data.length > 0 ? false : true} >Valider</button>
+                <div className="articles">
+                    {!data.length > 0 && <div className="empty-message">Panier vide</div>}
+                    {data.map(item => {
+                    return (
+                        <div className="detail" key={item.id}>
+                            <Count value={item.quantity} id={item.id} setAdd={handleAdd} setRemove={handleRemove}/>
+                            {item.title} {item.price} 
+                        </div>
+                    )
+                }
+                )}
+            </div>
+            {data.length > 0 && <div className="sub-cost">
+                    Sous-total: {subtotal} €
+            </div>}
+            
+            {data.length > 0 && <div className="ship-cost">
+                    Frais de livraison: {shipCost} €
+            </div>}
+            {data.length > 0 && <div className="total-cost">
+                    Total: {subtotal + shipCost} €
+            </div>}
+            </div>
         </div>
     )
 }

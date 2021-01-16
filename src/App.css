@@ -140,5 +140,53 @@ h3 {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background: red;
+  padding: 30px 0;
+}
+.panier .card {
+  box-shadow: 0 22px 24px 0 rgba(46, 51, 51, 0.07);
+  background: #fff;
+  border-radius: 4px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.panier .empty-message {
+  text-align: center;
+  margin: 15px 0;
+}
+.panier button {
+  display: block;
+  margin: 10px 0;
+  border-radius: 5px;
+  padding: 1rem;
+  background: #00cdbd;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.panier button[disabled] {
+  cursor: not-allowed;
+  background: #bac3c3;
+  color: #8b9a9b;
+}
+.panier .articles .detail {
+  display: flex;
+  padding: 10px 0px;
+  overflow: auto;
+}
+.panier .counter {
+  display: flex;
+}
+.panier .articles,
+.panier .ship-cost {
+  border-bottom: 1px solid #d1d7d7;
+}
+.panier .sub-cost,
+.panier .ship-cost {
+  padding: 5px 0;
+}
+.panier .total-cost {
+  padding: 5px 0;
 }
