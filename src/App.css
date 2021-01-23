@@ -185,6 +185,12 @@ h3 {
 .panier .counter {
   display: flex;
 }
+.panier .counter svg {
+  color: #00cdbd;
+}
+.panier .counter .value {
+  margin: 0 5px;
+}
 .panier .articles,
 .panier .ship-cost {
   border-bottom: 1px solid #d1d7d7;

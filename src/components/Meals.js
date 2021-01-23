@@ -2,7 +2,7 @@ const Meals = ({ meal, addtToCart }) => {
   const value = { id: meal.id, title: meal.title, price: meal.price, qty: 1 }
   return (
     <div className='meal'>
-      <div className='card' onClick={addtToCart}  data-value={JSON.stringify(value)}>
+      <div className='card' onClick={addtToCart} data-value={JSON.stringify(value)}>
         <div className='description'>
           <h3>{meal.title}</h3>
           {meal.description && <p>{meal.description}</p>}

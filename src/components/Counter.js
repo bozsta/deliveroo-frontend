@@ -1,19 +1,22 @@
-const Counter = ({value, setAdd, setRemove,id }) => {
-    const handleRemove = (e) => {
-        setRemove(id)
-    }
+import MinusIcon from './MinusIcon'
+import PlusIcon from './PlusIcon'
 
-    const handleAdd = (e) => {
-        setAdd(id)
-    }
+const Counter = ({ value, setAdd, setRemove, id }) => {
+  const handleRemove = (e) => {
+    setRemove(id)
+  }
 
-    return (
-        <div className="counter">
-            <div onClick={handleRemove} > - </div>
-            <div>{value}</div>
-            <div onClick={handleAdd} > + </div>
-        </div>
-    )
+  const handleAdd = (e) => {
+    setAdd(id)
+  }
+
+  return (
+    <div className='counter'>
+      <div onClick={handleRemove}> <MinusIcon /> </div>
+      <div className='value'>{value}</div>
+      <div onClick={handleAdd}> <PlusIcon /> </div>
+    </div>
+  )
 }
 
 export default Counter
