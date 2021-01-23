@@ -54,9 +54,14 @@ function App() {
 
   const handleCountRemove = (id) => {
     const newProducts = [...products]
+    console.log('newProducts', newProducts)
     for (let i = 0; i < newProducts.length; i++) {
       if (newProducts[i].id === id) {
-        newProducts[i].quantity = newProducts[i].quantity - 1;
+        if (newProducts[i].quantity > 1) {
+          newProducts[i].quantity = newProducts[i].quantity - 1;
+        } else {
+          newProducts.splice(i, 1)
+        }    
         break;
       }
     }

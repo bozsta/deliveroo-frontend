@@ -1,5 +1,5 @@
 const Meals = ({ meal, addtToCart }) => {
-  const value = { id: meal.id, title: meal.title, price: meal.price, qty: 1 }
+  const value = { id: meal.id, title: meal.title, price: meal.price}
   return (
     <div className='meal'>
       <div className='card' onClick={addtToCart} data-value={JSON.stringify(value)}>

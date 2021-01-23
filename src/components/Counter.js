@@ -12,9 +12,9 @@ const Counter = ({ value, setAdd, setRemove, id }) => {
 
   return (
     <div className='counter'>
-      <div onClick={handleRemove}> <MinusIcon /> </div>
+      <div className='minus' onClick={handleRemove}> <MinusIcon /> </div>
       <div className='value'>{value}</div>
-      <div onClick={handleAdd}> <PlusIcon /> </div>
+      <div className='plus' onClick={handleAdd}> <PlusIcon /> </div>
     </div>
   )
 }

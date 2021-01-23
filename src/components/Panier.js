@@ -17,6 +17,9 @@ const Panier = ({ data, handleAdd, handleRemove }) => {
   }, [data])
 
   const shipCost = 2.5
+  const totaltal = (subtotal) => {
+    return (subtotal + shipCost).toFixed(2)
+  }
 
   return (
     <div className="panier">
@@ -28,21 +31,26 @@ const Panier = ({ data, handleAdd, handleRemove }) => {
             return (
               <div className="detail" key={item.id}>
                 <Count value={item.quantity} id={item.id} setAdd={handleAdd} setRemove={handleRemove} />
-                {item.title} {item.price} €
+                <span className='title'>
+                  {item.title}
+                </span>
+                <span className='price'>
+                 {item.price} €
+                </span>
               </div>
             )
           }
           )}
         </div>
         {data.length > 0 && <div className="sub-cost">
-          Sous-total: {subtotal}  €
+          Sous-total: <span className='price'>{subtotal.toFixed(2)} €</span>
         </div>}
 
         {data.length > 0 && <div className="ship-cost">
-          Frais de livraison: {shipCost} €
+          Frais de livraison: <span className='price'>{shipCost} €</span>
         </div>}
         {data.length > 0 && <div className="total-cost">
-          Total: {subtotal + shipCost} €
+          Total: <span className='price'>{totaltal(subtotal)} €</span>
         </div>}
       </div>
     </div>
